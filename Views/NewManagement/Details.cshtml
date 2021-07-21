@@ -1,0 +1,71 @@
+﻿@model project.Models.News
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+<body>
+    <h1>最新消息詳情</h1>
+    <div style="border-top:solid 2PX; border:70vw">
+        <dl class="row" style="padding:20PX;">
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dd class="col-sm-7">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-7">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Photo)
+            </dt>
+            <dd class="col-sm-7">
+                @Html.DisplayFor(model => model.Photo)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Photodescription)
+            </dt>
+            <dd class="col-sm-7">
+                @Html.DisplayFor(model => model.Photodescription)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+            <dd class="col-sm-7">
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd class="col-sm-7">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Introduction)
+            </dt>
+            <dd class="col-sm-7">
+                @Html.DisplayFor(model => model.Introduction)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Text)
+            </dt>
+            <dd class="col-sm-7">
+                @Html.DisplayFor(model => model.Text)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="NewsUse">
+        <a asp-action="Edit" asp-route-id="@Model.Id">編輯</a> |
+
+        <a asp-action="Delete" asp-route-id="@Model.Id">刪除消息</a>|
+        <a asp-action="Index">返回</a>
+    </div>
+</body>

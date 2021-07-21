@@ -1,0 +1,47 @@
+﻿@model project.Models.UserLogin
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+<h4>個人帳號管理</h4>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Account)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Account)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Authorize)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Authorize)
+        </dd>
+
+    </dl>
+</div>
+<br />
+<br />
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.WID">編輯</a> |
+    <a asp-action="Index">返回</a>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />

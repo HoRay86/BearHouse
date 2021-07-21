@@ -1,0 +1,139 @@
+﻿<!Doctype html>
+<html>
+<head>
+    <title>@ViewData["Title"] - Bear House</title>
+    <!-- 註解:引入自己寫的css檔 -->
+    @RenderSection("Css", required: false)
+    <!-- 註解:引入boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="~/css/layout _user.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <!-- 註解:可以設section或是header -->
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <img src="~/img/backstage/logo_bgremove.png"> Bear House
+            </a>
+            <!-- 註解:頁面縮小時，上面列表變成下拉式列表 -->
+            <!-- .navbar-toggler 漢堡式選單按鈕 -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- .collapse.navbar-collapse 用於外層中斷點群組和隱藏導覽列內容 -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">員工管理</a>
+                        <div class="dropdown-menu">
+                            <a class="nav-link" asp-controller="Employee" asp-action="Index">員工資料</a>
+                            <a class="nav-link" asp-controller="User" asp-action="Index">帳號管理</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">房間管理</a>
+                        <div class="dropdown-menu">
+                            <a class="nav-link" asp-controller="Roommanagement" asp-action="Index">房型管理</a>
+                            <a class="nav-link" asp-controller="Introduction" asp-action="Index">房間介紹</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">網站維護</a>
+                        <div class="dropdown-menu">
+                            <a class="nav-link" asp-controller="NewManagement" asp-action="Index">最新消息</a>
+                            <a class="nav-link" asp-controller="AboutUs" asp-action="List">關於我們</a>
+                            <a class="nav-link" asp-controller="Customerdata" asp-action="ContactUs">留言板</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">訂單</a>
+                        <div class="dropdown-menu">
+                            <a class="nav-link" asp-controller="Customerdata" asp-action="Index">顧客房間管理</a>
+                            <a class="nav-link" asp-controller="Order" asp-action="Index">訂單資料</a>
+                        </div>
+                    </li>                  
+                    <li class="nav-item">
+                        <!--顯示使用者名稱-->
+                        <a class="nav-link" asp-controller="User" asp-action="Details" asp-route-id="@Context.User.Claims.FirstOrDefault(m => m.Type == "userID").Value">@Context.User.Claims.FirstOrDefault(m => m.Type == "Account").Value</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Backstage" asp-action="Logout">登出</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    @RenderBody()
+
+    <footer class="bg-dark text-center text-white">
+        <div class="container backtop p-2" style="background-color: darkslategray">
+            <a href="#" class="gotop">
+                @*<i class="fa fa-angle-up"></i><br />*@
+                <span>Go Top</span>
+            </a>
+        </div>
+
+        <!-- Grid container -->
+        <div class="container p-1 pb-0">
+            <!-- Section: Social media -->
+            <section class="pt-3">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-github"></i>
+                </a>
+                <!--login-->
+                <a class="btn btn-outline-light btn-floating m-1" asp-controller="Backstage" asp-action="Index" role="button">
+                    <i class="fa fa-user"></i>
+                </a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-2">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!--按下gotop,以0.8秒速度回頁面頂端-->
+    <script>
+        $(".gotop").click(function () {
+            jQuery("html,body").animate({ scrollTop: 0 }, 800);
+        });
+    </script>
+</body>
+</html>

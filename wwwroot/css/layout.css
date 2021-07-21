@@ -1,0 +1,200 @@
+body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5; /*行距*/
+    font-family: Arial, fantasy, 微軟正黑體; /*CSS，會先找第一種字體，若不支援或沒有該字體，則採用第二種字體*/
+    height:100%
+}
+/* 主選單LOGO*/
+header nav img {
+    width: 75px;
+}
+header nav {
+    margin: 0 auto;
+}
+/* 主選單標籤的距離
+header .navbar-brand {
+    margin-right: 30px;
+}
+  */  
+/*主選單LOGO照片在768px以下時可以隨著螢幕縮小跟著縮小*/ 
+@media screen and (max-width: 768px) {
+    .navbar-brand img {
+        width: 60px;
+    }
+}
+header nav ul li {
+    margin:0 35px;
+}
+@media screen and (max-width: 1137px) {
+    header nav ul li {
+        margin: 0 30px;
+    }
+}
+@media screen and (max-width: 1077px) {
+    header nav ul li {
+        margin: 0 28px;
+    }
+}
+@media screen and (max-width: 1053px) {
+    header nav ul li {
+        margin: 0 23px;
+    }
+}
+@media screen and (max-width: 993px) {
+    header nav ul li {
+        margin: 0 18px;
+    }
+}
+@media screen and (min-width:898px)and (max-width: 933px) {
+    header nav ul li {
+        margin: 0 15px;
+    }
+}
+@media screen and (min-width:861px)and (max-width: 897px) {
+    header nav ul li {
+        margin: 0 12px;
+    }
+}
+@media screen and (max-width: 861px) {
+    header nav ul li {
+        margin: 0 10px;
+    }
+    .navbar-brand img {
+        width: 65px;
+    }
+    header nav a {
+       font-size:14px;
+    }
+    .navbar-brand {
+        font-size: 16px;
+    }
+}
+@media screen and (min-width:724px) and (max-width: 760px) {
+    header nav ul li {
+        margin: 0 7px;
+    }
+}
+@media screen and (min-width:657px) and (max-width: 724px) {
+    header nav ul li {
+        margin: 0 5px 0 0;
+    }
+    .navbar-brand img {
+        width: 62px;
+    }
+    .navbar-brand {
+        margin:0;
+    }
+
+}
+@media screen and (min-width:616px) and (max-width: 657px) {
+    header nav ul li {
+        margin: 0 5px 0 0;
+    }
+
+    .navbar-brand img {
+        width: 60px;
+    }
+
+    .navbar-brand {
+        margin: 0 0.3px 0 0;
+        font-size: 14px;
+    }
+
+    header nav a {
+        font-size: 13px;
+    }
+}
+@media screen and (min-width:587px) and (max-width: 615px) {
+    header nav ul li {
+        margin: 0 0.4px 0 0;
+    }
+
+    .navbar-brand img {
+        width: 58px;
+    }
+
+    .navbar-brand {
+        margin: 0 0.1px 0 0;
+        font-size: 12px;
+    }
+
+    header nav a {
+        font-size: 10px;
+    }
+}
+@media screen and (min-width:575px) and (max-width: 587px) {
+    header nav ul li {
+        margin: 0 0.3px 0 0;
+    }
+
+    .navbar-brand img {
+        width: 55px;
+    }
+
+    .navbar-brand {
+        margin: 0 0.1px 0 0;
+        font-size: 11px;
+    }
+
+    header nav a {
+        font-size: 9px;
+    }
+}
+header nav ul {
+    text-align:right;
+    margin:0 auto;
+}
+
+header nav ul .reserve a {
+        border: solid;
+        border-radius: 300px;
+        display: inline-block;
+        padding-left: 30px;
+        padding-right: 30px;
+}
+header nav ul .reserve a:hover {
+        font-weight:bolder;
+    }
+footer .backtop {
+    background-color: #ADADAD;
+    max-width: 100%;
+}
+
+.gotop {
+    color: white;
+    padding-top: 1.8em;
+    display: inline-block; /* or block */
+    position: relative;
+    border-color: white;
+    text-decoration: none;
+    transition: all .3s ease-out;
+}
+
+    .gotop:before {
+        content: '▲';
+        font-size: .9em;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -.7em;
+        border: solid .13em white;
+        border-radius: 10em;
+        width: 1.4em;
+        height: 1.4em;
+        line-height: 1.3em;
+        border-color: inherit;
+        transition: transform .5s ease-in;
+    }
+
+    .gotop:hover {
+        color: white;
+        border-color: white;
+        font-weight: bolder;
+        font-size: large;
+        text-decoration: none;
+    }
+
+        .gotop:hover:before {
+            transform: translateY(3px);
+        }

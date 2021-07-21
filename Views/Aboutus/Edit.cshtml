@@ -1,0 +1,47 @@
+﻿@model project.Models.AboutUs
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+<br />
+<br />
+<h1>編輯關於我們</h1>
+<br />
+
+<hr />
+<div class="row">
+    <div class="col-4 offset-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="t1" class="control-label"></label>
+                <input asp-for="t1" class="form-control" />
+                <span asp-validation-for="t1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="t2" class="control-label"></label>
+                <input asp-for="t2" class="form-control" />
+                <span asp-validation-for="t2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="t3" class="control-label"></label>
+                <input asp-for="t3" class="form-control" />
+                <span asp-validation-for="t3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="t4" class="control-label"></label>
+                <input asp-for="t4" class="form-control" />
+                <span asp-validation-for="t4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="保存" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="List">回上一頁</a>
+</div>

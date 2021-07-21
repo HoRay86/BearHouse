@@ -1,0 +1,65 @@
+﻿@model IEnumerable<project.Models.Room>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+<h1>房型管理</h1>
+
+<p>
+    <a asp-action="Create">新增房型</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.RoomName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNumber)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.DayPrice)
+            </th>
+            <th>
+                操作
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomNumber)
+                </td>
+
+                <th>
+                    @Html.DisplayFor(model => item.DayPrice)
+                </th>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RoomNumber">編輯</a>
+                    <a asp-action="Details" asp-route-id="@item.RoomNumber">詳情</a>
+                    <a asp-action="DeleteRoomNumber" asp-route-id="@item.RoomNumber">刪除此間房號</a>
+                    <a asp-action="DeleteRoomType" asp-route-id="@item.RoomType">刪除此種房型</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

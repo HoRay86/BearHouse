@@ -1,0 +1,52 @@
+h1,h4 {
+    margin: unset;
+    padding: 30PX 0 20PX;
+}
+h4 {
+    margin: unset;
+    padding: 30PX 0 20PX;
+}
+.NewsDetails a {
+    text-decoration: none;
+    color: black;
+}
+
+    .NewsDetails a:hover {
+        color: #331387;
+    }
+
+table {
+    margin-top: 30PX;
+}
+
+#NewsCreateImgDemo {
+    width: 300PX;
+    padding: 5PX;
+}
+
+textarea {
+    width: 100%;
+    background-color: lightgray;
+    border: 3PX solid #111010;
+    border-radius: 4PX;
+}
+
+#NewsCreateImgDemo {
+    width: 300PX;
+    padding: 5PX;
+}
+
+textarea {
+    width: 100%;
+    background-color: lightgray;
+    border: 3PX solid #111010;
+    border-radius: 4PX;
+}
+
+dt, dd {
+    height: 50PX;
+}
+
+.NewsUse {
+    margin: 50PX 0 40PX;
+}

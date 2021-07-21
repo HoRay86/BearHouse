@@ -1,0 +1,49 @@
+﻿/*後台登入css*/
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3)), url(../img/backstage/bg1.jpg);
+    background-size: cover; /*將背景圖片的大小放大至容器的大小並填滿*/
+    background-position: center center; /*背景圖片水平位置與垂直位置均置中對齊*/
+    background-repeat: no-repeat; /*背景圖片不要重覆顯示（僅顯示一次）*/
+}
+
+#backstage {
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -300px;
+    text-align: center;
+}
+
+    #backstage img {
+        width: 100PX;
+    }
+
+input[type=text], select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password], select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: lemonchiffon;
+    color: black;
+    padding: 5px 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -1,0 +1,247 @@
+﻿@*5/25 修改RWD*@
+@*5/26 縮小螢幕購物欄位固定最底*@
+
+@using project.Models.Helpers
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Reserve";
+    var orderroom = HttpContextAccessor.HttpContext.Session.Get<List<OrderRooms>>("orderroom");
+    var start = HttpContextAccessor.HttpContext.Session.GetString("start");
+    var end = HttpContextAccessor.HttpContext.Session.GetString("end");
+    var car = HttpContextAccessor.HttpContext.Session.Get<List<Item>>("Cart");
+    var total = HttpContextAccessor.HttpContext.Session.GetString("Total");
+    var title = HttpContextAccessor.HttpContext.Session.GetString("title");
+    var title1 = HttpContextAccessor.HttpContext.Session.GetString("title1");
+    var room = HttpContextAccessor.HttpContext.Session.GetString("room1");
+}
+
+@section css
+    {
+    <link rel="stylesheet" href="~/css/booking_room.css">
+}
+
+<body>
+
+    <article class="main">
+        <!--入住日期選擇 之後要JS設定日期限制-->
+        <form asp-controller="Reserve" asp-action="Find">
+            <section id="date1" class="container form-group">
+                <input type="hidden" name="room" value="@room">
+                <div>
+                    @*autocomplete="off" 取消INPUT自動帶出的輸入記錄*@
+                    <label for="checkindate">入住</label>
+                    <input id="startDate" name="startDate" maxDate="endDate" placeholder="入住日期" value="@start" autocomplete="off" />
+                </div>
+                <div>
+                    <label for="checkoutdate">退房</label>
+                    <input id="endDate" name="endDate" minDate="startDate" placeholder="退房日期" value="@end" autocomplete="off" />
+                </div>
+                <input type="submit" value="查看空房" />
+            </section>
+        </form>
+        <!--可預訂房間列表，若選擇時間會顯示出該時間可預訂之房間 選擇人數、房間數後自動加入右側購物欄位-->
+        <section id="orderpage">
+            <div class="container">
+                <div class="row">
+                    @if (orderroom != null)
+                    {
+                        <!--房間照片簡介及預訂數量選擇-->
+                        @foreach (var item in orderroom)
+                        {
+                            <div class="order_info col-12 col-md-9">
+                                @if (item.RoomType == orderroom[0].RoomType)
+                                {@(title)}
+                                @if (item.RoomType == orderroom[1].RoomType)
+                                {@(title1)}
+                                <div class="orderroom row" style="margin:0; margin-bottom:20PX;">
+
+                                    <!--(左)房間照片，手動輪播-->
+                                    <div class="orderroom_img col-12 col-md-5" style="padding:3PX;">
+                                        <div id="myCarousel@(item.RoomType)" class="carousel slide" data-ride="carousel ">
+                                            <!-- 連結導引項目 -->
+                                            <ul class="carousel-indicators">
+                                                <li data-target="#myCarousel@(item.RoomType)" data-slide-to="0" class="active"></li>
+                                                <li data-target="#myCarousel@(item.RoomType)" data-slide-to="1"></li>
+                                                <li data-target="#myCarousel@(item.RoomType)" data-slide-to="2"></li>
+                                            </ul>
+                                            <!--圖片顯示區, 幻燈片圖片 -->
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="@Url.Content(item.Photo)">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="@Url.Content(item.Photo1)">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="@Url.Content(item.Photo2)" />
+                                                </div>
+                                            </div>
+                                            <!-- 前後切換連結-->
+                                            <!--<a class="carousel-control-prev" href="#myCarouse1"
+                                                data-slide="prev">
+                                                <span class="carousel-control-prev-icon"></span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#myCarouse1"
+                                               data-slide="next">
+                                                <span class="carousel-control-next-icon"></span>
+                                            </a>-->
+                                        </div>
+                                    </div>
+
+                                    <!--(右)房間簡介及預訂-->
+                                    <div class="orderroom_all col-md-7 col-12">
+                                        <form method="post" asp-controller="Reserve" asp-action="Join" asp-route-Id="@(item.RoomType)">
+                                            <div class="orderroom_txt">
+
+                                                <!--暫定 要從資料庫抓資訊呈現 我不知道要呈現啥 到時候再設框架?????-->
+                                                <p id="demo" name="RoomName">@(item.RoomName) </p><br>
+                                                <p>價格: $<span id="price" name="DayPrice">@(item.DayPrice) </span></p><br>
+                                                <p name="RoomSize">最多可入住人數:@(item.RoomSize)</p>
+                                            </div>
+
+                                            <div class="orderroom_order">
+
+                                                <span class="orderroom_lookmore@(item.RoomType)"> <i class="fas fa-long-arrow-alt-down"></i> 查看詳情</span>
+
+
+                                                <span class="no-rooms av-quantity">
+                                                    <label class="type_of_room"> 房間 </label>
+                                                    <select name="Quantity" id="number">
+                                                        <option value="0" selected="">0</option>
+                                                        @for (int i = 1; i <= item.Amount; i++)
+                                                        {
+                                                            <option value="@i">@i</option>
+                                                        }
+                                                    </select>
+                                                    <input type="submit" value="訂房">
+                                                </span>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--查看詳情之收拉式欄位 -->
+                            <div class="lookmoretxt  orderroom_lookmoretxt@(item.RoomType)" style="display:none;">
+                                <strong>提供用品:</strong>&ensp;免費毛巾、沐浴乳、洗髮乳、潤髮乳、掛衣架<br />
+
+                                <strong>套房設備:</strong>&ensp;私人套房包含吹風機、洗漱杯、電視、冷氣、國際通用插座及獨立私人衛浴設備。
+                            </div>
+                            <script>
+                                // 查看詳情之收拉式欄位
+                                        $(document).ready(function () {
+                                            $(".orderroom_lookmore@(item.RoomType)").click(function () {
+                                                $(".orderroom_lookmoretxt@(item.RoomType)").slideToggle();
+                                            });
+                                        });
+                            </script>
+                        }
+                    }
+
+                    <!--此欄為訂房購物車欄位 想要讓他一直都在畫面內 -->
+                    @*@if (car != null)
+                        {*@
+                    @if (car == null)
+                    {
+                        <div id="check_box" class="check_box col-12 col-md-3 ">
+                            <form method="post" class="checkform">
+                                <div class="dropdown-item" style="padding:0">@start~@end</div>
+                                <div>請選擇房間</div>
+                                <input type="submit" disabled="disabled" value="立即預訂" id="btn_booking" class="btn btn_booknow" asp-controller="Reserve" asp-action="Check" asp-route-start="@start" asp-route-end="@end">
+                            </form>
+                        </div>
+                    }
+                    @if (car != null)
+                    {
+
+                        <div id="check_box" class="check_box col-12 col-md-3 ">
+                            @if (car.Count > 0)
+                            {
+                                <form method="post" class="checkform">
+                                    <div class="dropdown-item" style="padding:0">@start~@end</div>
+
+
+                                    @foreach (var item in car)
+                                    {
+                                        <input type="hidden" name="roomtype" value="@item.RoomType" /> //hidden為隱藏欄位 傳送所需資料
+                                        <input type="hidden" name="Quantity" value="@item.Quantity" />
+                                        <div class="useorder">
+
+                                            <div class="orderAll">
+                                                <div id="order_txt">房名: @(item.RoomName)</div>
+                                                <div id="order_total">價格:@item.DayPrice 元 x @item.Quantity </div>
+                                            </div>
+                                            <div class="deleteBtn" style=" margin-top: 8PX">
+                                                <a asp-controller="Reserve" asp-action="Deletecar" asp-route-Id="@item.RoomType"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div><br />
+                                    }
+
+                                    <div class="totalPrice">總價:@total</div>
+                                    <input type="submit" value="立即預訂" id="btn_booking" class="btn btn_booknow" asp-controller="Reserve" asp-action="Check" asp-route-start="@start" asp-route-end="@end">
+                                </form>
+                            }
+                            else
+                            {
+                                <form method="post" class="checkform">
+                                    <div class="dropdown-item" style="padding:0">@start~@end</div>
+                                    <div>請選擇房間</div>
+                                    <input type="submit" disabled="disabled" value="立即預訂" id="btn_booking" class="btn btn_booknow" asp-controller="Reserve" asp-action="Check" asp-route-start="@start" asp-route-end="@end">
+                                </form>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </section>
+    </article>
+    <script>
+        //checkBox欄位凍結 (壞掉的 未來有機會希望可以研究好)
+        $(document).scroll(function () {
+            if ($(document).scrollTop() >= 250) {
+                $('#check_box').addClass('fixedBar');
+                $('#check_box div').addClass('visible-title');
+            }
+            else {
+                $('#check_box').removeClass('fixedBar');
+                $('#check_box div').removeClass('visible-title');
+            }
+        });
+
+        //日期選擇區間 (壞掉的 未來有機會希望可以研究好)
+
+        $(document).ready(function () {
+            $("#startDate").datepicker({
+                dateFormat: 'yy/mm/dd',
+                minDate: "+0d",
+
+            });
+            $("#startDate").datepicker({
+                dateFormat: 'yy/mm/dd',
+                minDate: "minDate +1d",
+
+            });
+            $('input[name$="Date"]').datepicker({
+                dateFormat: 'yy/mm/dd',
+                beforeShow: function () {
+                    if ($(this).attr('maxDate')) {
+                        var dateItem = $('#' + $(this).attr('maxDate'));
+                        if (dateItem.val() !== "") {
+                            $(this).datepicker('option', 'maxDate', dateItem.val());
+                        }
+                    }
+
+                    if ($(this).attr('minDate')) {
+                        var dateItem = $('#' + $(this).attr('minDate'));
+                        if (dateItem.val() !== "") {
+                            $(this).datepicker('option', 'minDate', dateItem.val());
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+

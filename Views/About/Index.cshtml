@@ -1,0 +1,34 @@
+﻿@model project.Models.AboutUs
+
+@{
+    ViewData["Title"] = "About Bear";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/about.css">
+}
+
+<section id="About">
+    <div class="jumbotron">
+        <h1>ABOUT BEAR</h1>
+        <h4>關於我們</h4>
+    </div>
+    <!-- mobile-->
+    <div class="aboutBox">
+        <div class="poster">
+            @Model.t1
+        </div>
+        <div class="aboutBg">
+
+            <h2>@Model.t2</h2>
+            <div class="aboutTxt">
+                @Html.Raw(Model.t3.Replace("\n", "<br>"))
+            </div>
+            <div> 
+                <img src="~/img/3.jpg" />
+            </div>
+            <div>
+                @Html.Raw(Model.t4.Replace("\n","<br>"))
+            </div>
+        </div>
+    </div>
+</section>

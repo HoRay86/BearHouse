@@ -1,0 +1,129 @@
+/*房型選擇*/
+
+#roomtype{
+    text-align: center;
+    line-height: 2rem;
+    font-family: cwTeXFangSong, serif;
+}
+#poem  {
+        margin-top:150px;
+	    text-align: center;
+    	line-height: 2rem;
+    	font-family: cwTeXFangSong, serif;
+    }
+#poem .poemsdown {
+        padding: 20px 0;
+}
+#roomtype h1 {
+    font-family: "copperplat";
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    line-height: 2.9rem;
+    letter-spacing: 3px;
+    color: #8b6f4c;
+}
+
+#roomtype h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    color: darksalmon;
+}
+
+.hr01 { /*hr線條:樣式 */
+    border-top: 0PX;
+    border-bottom: 5px #5D4037 solid;
+    width: 75%;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+.hr02 { /*hr線條:樣式 */
+    border-bottom: 2px #795548 solid;
+    width: 70%;
+}
+
+#singleroom, #singleroom2, #doubleroom, #doubleroom2, #tripleroom, #tripleroom2, #familyroom, #familyroom2 {
+    max-width: 680PX;
+    margin: 50PX auto 20PX;
+    background-color: #e7eaebfd; /*rgb(230,225,230)*/
+    display: block;
+    padding-top: 35PX;
+    overflow: hidden;
+}
+
+#allroom img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: auto;
+}
+
+.roomContent {
+    padding: 25PX 20PX;
+    max-width: 650PX;
+    margin: 0 auto;
+}
+
+    .roomContent ul {
+        padding: 20PX 0;
+        text-align: center;
+        margin: 0;
+    }
+        .roomContent ul li {
+            padding: 20PX 0 0;
+            list-style-type: none;
+            display: inline-block;
+            width: 75PX;
+            margin: 0 10PX;
+        }
+
+            .roomContent ul li img {
+                width: 40PX;
+            }
+
+            .roomContent ul li p {
+                font-size: 13PX;
+            }
+
+.roomView {
+    border-style: double;
+    padding: 10PX auto;
+    text-align: center;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.roomView a {
+        text-decoration: none;
+        color: black;
+        text-align: center;
+        margin: 10PX auto;
+    }
+
+        .roomView a:hover {
+            text-decoration: none;
+            font-size: 17PX;
+            font-weight:bold;
+            color: darkslategray;
+        }
+.btn roomView {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#allroom .back a {
+    text-decoration: none;
+    color: lightgray;
+    font-size: 14PX;
+}
+.back {
+    margin: 10PX auto;
+    text-align:center;
+}
+#allroom .back a:hover {
+    color: lightgray;
+    text-decoration: none;
+    font-size: 16PX;
+}

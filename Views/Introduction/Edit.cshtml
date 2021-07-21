@@ -1,0 +1,101 @@
+﻿@model project.Models.Introduction
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+<h4>編輯房間介紹</h4>
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RoomType" />
+            <div class="form-group">
+                <label asp-for="Photo" class="control-label"></label>
+                <input asp-for="Photo" class="form-control" />
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo1" class="control-label"></label>
+                <input asp-for="Photo1" class="form-control" />
+                <span asp-validation-for="Photo1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo2" class="control-label"></label>
+                <input asp-for="Photo2" class="form-control" />
+                <span asp-validation-for="Photo2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoomSize" class="control-label"></label>
+                <input asp-for="RoomSize" class="form-control" />
+                <span asp-validation-for="RoomSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Singlebed" class="control-label"></label>
+                <input asp-for="Singlebed" class="form-control" />
+                <span asp-validation-for="Singlebed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Doublebed" class="control-label"></label>
+                <input asp-for="Doublebed" class="form-control" />
+                <span asp-validation-for="Doublebed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TV" class="control-label"></label>
+                <input asp-for="TV" class="form-control" />
+                <span asp-validation-for="TV" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Airconditioning" class="control-label"></label>
+                <input asp-for="Airconditioning" class="form-control" />
+                <span asp-validation-for="Airconditioning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bathtub" class="control-label"></label>
+                <input asp-for="Bathtub" class="form-control" />
+                <span asp-validation-for="Bathtub" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tellphone" class="control-label"></label>
+                <input asp-for="Tellphone" class="form-control" />
+                <span asp-validation-for="Tellphone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Refrigerator" class="control-label"></label>
+                <input asp-for="Refrigerator" class="form-control" />
+                <span asp-validation-for="Refrigerator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShowerRoom" class="control-label"></label>
+                <input asp-for="ShowerRoom" class="form-control" />
+                <span asp-validation-for="ShowerRoom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoomContent" class="control-label"></label>
+                <input asp-for="RoomContent" class="form-control" />
+                <span asp-validation-for="RoomContent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoomTxt" class="control-label"></label>
+                <input asp-for="RoomTxt" class="form-control" />
+                <span asp-validation-for="RoomTxt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">回上一頁</a>
+</div>

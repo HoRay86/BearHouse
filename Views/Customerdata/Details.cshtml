@@ -1,0 +1,91 @@
+﻿@model project.Models.Customer
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+<h4>訂單詳細管理</h4>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.RoomType)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.RoomType)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.RoomName)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.RoomName)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.RoomNumber)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.CustomerPhone)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.CustomerPhone)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.CustomerEmail)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.CustomerEmail)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.ArrivalDate)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.ArrivalDate)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.EstimatedArrvialTime)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.EstimatedArrvialTime)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.DepartureDate)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.DepartureDate)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Nights)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Nights)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID" asp-route-roomnumber="@Model.RoomNumber">編輯</a> |
+    <a asp-action="Index">返回</a>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />

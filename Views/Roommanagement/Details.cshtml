@@ -1,0 +1,54 @@
+﻿@model project.Models.Room
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+<h4>房間資料</h4>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.RoomName)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.RoomName)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.RoomType)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.RoomType)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Floor)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Floor)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.RoomNumber)
+        </dd>
+
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.DayPrice)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.DayPrice)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.RoomNumber">編輯</a>
+    <a asp-action="Index">回上一頁</a>
+</div>
+<br />
+<br />

@@ -1,0 +1,132 @@
+﻿@model IEnumerable<project.Models.News>
+@{
+    ViewData["Title"] = "NEWS";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/news.css">
+}
+
+<section id="NewsEvent">
+    <div class="jumbotron">
+        <h1>NEWS</h1>
+        <h4>最新消息</h4>
+    </div>
+
+    <main>
+        <div class="container">
+            <ul class="events">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <a asp-controller="News" asp-action="Event1Index" asp-route-Id="@item.Id">
+                            <div class="event">
+
+                                <img src="@Url.Content(item.Photo)" alt="@item.Photodescription" />
+
+                                <div class="event-date">
+                                    &nbsp;@item.Date
+                                </div>
+                                <div class="event-name">
+                                    @item.Name
+                                </div>
+                                <div class="event-text">
+                                    <div class="event-txt">
+                                        @Html.Raw(item.Title.Replace("\n", "<br>"))
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                }
+                @*<li>
+                    <a asp-controller="News" asp-action="Event1Index" asp-route-Id="2">
+                        <div class="event">
+
+                            <div class=event-img>
+                                <img src="~/img/news/product-2.jpg" alt="母親節計畫" />
+
+                            </div>
+                            <div class="event-date">
+                                &nbsp;2021.5.5
+                            </div>
+                            <div class="event-name">
+                                【5月孝親月】 爸媽入住，我們買單
+                            </div>
+                            <div class="event-text">
+                                <div class="event-txt">
+                                    四人同行平日入住，可享至多兩位50歲以上貴賓免費入住
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="News" asp-action="Event1Index" asp-route-Id="3">
+                        <div class="event">
+
+                            <img src="~/img/news/product-7.jpg" alt="租車優惠" />
+
+                            <div class="event-date">
+                                &nbsp;2021.5.6
+                            </div>
+                            <div class="event-name">
+                                有車任你行
+                            </div>
+                            <div class="event-text">
+                                <div class="event-txt">
+                                    即日起至12/30，住房 + 租車一次搞定<br>
+                                    單人旅行/兩人相約/多人旅遊 最佳選擇
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="News" asp-action="Event1Index" asp-route-Id="4">
+                        <div class="event">
+
+                            <img src="~/img/news/product-5.jpg" alt="疫起旅行" />
+
+                            <div class="event-date">
+                                &nbsp;2021.5.12
+                            </div>
+                            <div class="event-name">
+                                疫起旅行 : 1+1自由配
+                            </div>
+                            <div class="event-text">
+                                <div class="event-txt">
+                                    即日起至12/30，指定一泊一食自由配方案入住<br>先選房型在選餐食只要$2,999，<br>
+                                    專案加購超值組合$999
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </li>
+                <li>
+                    <a asp-controller="News" asp-action="Event1Index" asp-route-Id="5">
+                        <div class="event">
+
+                            <img src="~/img/news/product-4.jpg" alt="桌遊活動" style="width:385PX" />
+
+                            <div class="event-date">
+                                &nbsp;2021.5.20
+                            </div>
+                            <div class="event-name">
+                                勇闖神秘島 一起玩桌遊
+                            </div>
+                            <div class="event-text">
+                                <div class="event-txt">
+                                    5/20-6/30 期間限定桌遊場!<br>
+                                    每週三晚上7:00來認識新朋友吧
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>*@
+            </ul>
+        </div>
+    </main>
+</section>

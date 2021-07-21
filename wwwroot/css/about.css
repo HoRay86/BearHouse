@@ -1,0 +1,52 @@
+﻿#About {
+    text-align: center;
+    line-height: 2rem;
+    font-family: cwTeXFangSong, serif;
+    padding-top: 70px;
+}
+
+    #About h1 {
+        font-family: "copperplat";
+        font-size: 50px;
+        margin-bottom: 24px;
+        line-height: 2.9rem;
+        letter-spacing: 3px;
+        color: #8b6f4c;
+    }
+
+    #About h4 {
+        font-weight: bold;
+        letter-spacing: 0.16em;
+        color: darksalmon;
+    }
+.poster {
+    padding-bottom: 30PX;
+    padding-top: 12PX;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: black;
+}
+.aboutBg{
+    padding-bottom:30PX;
+}
+    .aboutBg h2 {
+        color: rgb(143, 122, 114);
+        font-weight: bold; /*文字粗體*/
+        font-size: 28px;
+        padding-bottom: 15PX;
+        border-bottom: 5px solid rgb(128, 128, 128,0.7); /*邊框粗細 實線 顏色*/
+        margin: 0 100PX;
+    }
+
+    .aboutBg img {
+        width: 65%;
+        margin-bottom: 20px;
+    }
+
+.aboutTxt {
+    padding-top: 30PX;
+    padding-bottom: 35PX;
+    color: dimgray;
+    font-size: 17PX;
+    font-family: STZhongsong;
+}

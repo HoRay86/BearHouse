@@ -1,0 +1,131 @@
+﻿@model project.Models.RoomIntroduction
+
+@{
+    ViewData["Title"] = "Singleroom";
+    var imagepath = Model.Photo; <!--讀取資料庫中的照片路徑-->
+    var imagepath1 = Model.Photo1;
+    var imagepath2 = Model.Photo2;
+
+}
+
+@section css
+    {
+    <link rel="stylesheet" href="~/css/roomtype.css">
+}
+
+<div class="container">
+    <section id="roomtype">
+        <div class="room_name">
+            <h1>@Model.Description</h1>
+        </div>
+        <hr class="hr01">
+        <hr class="hr02">
+        <div class="roomtxt">
+           @Html.Raw(Model.RoomTxt.Replace("\n", "<br>")) <!--raw將字串內容包起來 會轉換成html格式   replace取代 \n(換行符號)取代成<br> -->
+        </div>
+    </section>
+    <section id="room_img">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel data-interval=" false"">
+            <!-- 連結導引項目 -->
+            <ul class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ul>
+            <!--圖片顯示區, 幻燈片圖片 -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="@Url.Content(imagepath)" alt="single_room" class="img-fluid"> <!--Url.Content相對路徑轉絕對路徑  -->
+                </div>
+                <div class="carousel-item">
+                    <img src="@Url.Content(imagepath1)" alt="bathroom" class="img-fluid">
+                </div>
+                <div class="carousel-item">
+                    <img src="@Url.Content(imagepath2)" alt="shampoo" class="img-fluid">
+                </div>
+            </div>
+            <!-- 前後切換連結-->
+            <a class="carousel-control-prev" href="#myCarousel"
+               data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel"
+               data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </section>
+
+    <section class="roomDetails">
+        <div class="rdtitle">
+            <b>ROOM DETAILS</b>
+            <div class="RDtitle">| 房型資訊 |</div>
+        </div>
+        <!--房型資訊-->
+
+        <ul>
+            @if (Model.Singlebed.Equals("有"))
+            {
+                <li><i class="fas fa-bed"></i> 單人床</li>
+            }
+            @if (Model.Doublebed.Equals("有"))
+            {
+                <li><i class="fas fa-bed"></i> 雙人床</li>
+            }
+            @if (Model.Tellphone.Equals("有"))
+            {
+                <li><i class="fas fa-phone-square"></i> 電話</li>            
+            }
+            @if (Model.TV.Equals("有"))
+            {
+                <li><i class="fas fa-tv"></i> 電視</li>
+            }
+            @if (Model.Airconditioning.Equals("有"))
+            {
+                <li><i class="far fa-snowflake"></i> 空調</li>
+            }
+            @if (Model.ShowerRoom.Equals("有"))
+            {
+                <li><i class="fas fa-shower"></i>  淋浴間</li>
+            }
+            @if (Model.Bathtub.Equals("有"))
+            {
+                <li><i class="fas fa-bath"></i> 浴缸</li>
+            }
+            @if (Model.Refrigerator.Equals("有"))
+            {
+        <li><i class="fas fa-compact-disc"></i> 黑膠唱片</li>
+            }
+        </ul>
+        <div class="textbox">
+            <p>每晚房價$@Model.DayPrice+10%</p>
+
+            <p>入住時間: 15:00</p>
+
+            <p>退房時間: 11:00</p>
+            <p>入住者至少一位須年滿18歲</p>
+        </div>
+        <div class="order">
+            <p><strong>★訂房須知★</strong></p>
+            <p>旅客於辦理入住時，需提供有效信用卡授權NT$1000之保證訂金，用於支付住房費用以外之其它費用。如退房後未有其它費用產生，旅館將於退房後12小時內向銀行申請取消旅客信用卡授權。</p>
+        </div>
+        <form method="post" asp-controller="Reserve" asp-action="Find" asp-route-startdate="@DateTime.Now.ToString("yyyy/MM/dd")" asp-route-enddate="@DateTime.Now.AddDays(1).ToString("yyyy/MM/dd")"  asp-route-room="@Model.RoomType">
+        <div class="btn">
+            <input type="submit" value="立即訂房" onclick=""><!--會連到訂房頁面-->
+        </div>
+        </form>
+    </section>
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="goback">
+    <a asp-controller="Rooms" asp-action="Singleindex">
+        <i class="fas fa-hand-point-left"></i> Back
+    </a>
+</div>

@@ -1,0 +1,62 @@
+﻿@model project.Models.CustomerData
+@using project.Models.Helpers
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Reserve";
+    var orderroom = HttpContextAccessor.HttpContext.Session.Get<List<OrderRooms>>("orderroom");
+    var start = HttpContextAccessor.HttpContext.Session.GetString("start");
+    var end = HttpContextAccessor.HttpContext.Session.GetString("end");
+    var car = HttpContextAccessor.HttpContext.Session.Get<List<Item>>("Cart");
+    var total = HttpContextAccessor.HttpContext.Session.GetString("Total");
+}
+
+@section css
+    {
+    <link rel="stylesheet" href="~/css/checkout.css">
+}
+<body>
+    <div class="container">
+        <h2>謝謝您，您已完成訂單。</h2>
+        <h4>以下是訂單基本資料</h4>
+        <section class="order">
+            <div class="orderInfo">
+                <div class="roomcheck">
+                    
+                        @foreach (var item in car)
+                        {
+                            <div class="roomsOrder">
+                                <div>
+                                    <img src="@Url.Content(item.Photo)" alt="">
+
+                                </div>
+                                <div class="check">
+                                    <p>房型:@item.RoomName</p>
+                                    <p>金額:@item.Total</p>
+                                </div>
+                            </div>
+                    }
+                </div>
+
+                <div class="orderId">
+                    <p>您的訂單編號:@Model.ID</p>
+                    <p>房費總計@(total)，於入住期間支付</p>
+                </div>
+                <div class="orderTime">
+                    <p>訂購日期:@DateTime.Now.ToLongDateString().ToString()</p>
+                    <p>抵達時間:@Model.EstimatedArrvialTime </p>
+                    <p>入住日期:@start</p>
+                    <p>退房日期:@end</p>
+                </div>
+                <div class="customer">
+                    <p>姓名:@Model.CustomerName</p>
+                    <p>付款方式:信用卡擔保訂房</p>
+                    <p>連絡電話:@Model.CustomerPhone</p>
+                    <p>電子信箱:@Model.CustomerEmail</p>
+                </div>
+            </div>
+            <div class="Btn"><button type="button">@Html.ActionLink("回首頁", "tohome")</button></div>
+
+        </section>
+    </div>
+</body>    

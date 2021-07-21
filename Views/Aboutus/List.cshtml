@@ -1,0 +1,54 @@
+﻿@model IEnumerable<project.Models.AboutUs>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+<br />
+<br />
+<h1>關於我們</h1>
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.t1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.t2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.t3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.t4)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.t1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.t2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.t3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.t4)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">編輯</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<br />
+<br />

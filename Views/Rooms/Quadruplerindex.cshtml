@@ -1,0 +1,118 @@
+﻿@{
+    ViewData["Title"] = "ROOMS";
+}
+
+
+@section css{
+    <link rel="stylesheet" href="~/css/roomstyle_select.css">
+}
+
+<section id="poem">
+    <div class="poemsup">
+        <h1>四人套房</h1>
+    </div>
+    <hr class="hr01">
+    <hr class="hr02">
+    <div class="poemsdown">
+        享受黑膠唱盤與精選唱片，<br>
+        襯著光影或夜色盡興談心，<br>
+        把握與家人好友出遊的幸福時光。
+    </div>
+</section>
+<article id="allroom">
+    <section id="familyroom">
+        <div class="mainImg">
+            <img src="~/img/Room/family_room1.jpg" alt="family_room">
+        </div>
+        <div class="roomContent">
+            <div class="roomtxt">
+                <h2>商務四人房</h2>
+                專屬商務及團體設計的旅居商務四人房，寬敞空間及良好隔音設備,<br />
+                即便是在鬧區，也能享有靜謐的住宿體驗。
+            </div>
+            <div>
+                <ul class="room_icon">
+                    <li>
+                        <i><img src="~/img/use/bed.png" title="雙人床" alt="雙人床"></i>
+                        <p>雙人床</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/tv.png" title="液晶電視" alt="液晶電視"></i>
+                        <p>液晶電視</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/movie.png" title="黑膠唱盤" alt="黑膠唱盤"></i>
+                        <p>黑膠唱盤</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/shower.png" title="淋浴間" alt="淋浴間"></i>
+                        <p>淋浴間</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/slippers.png" title="室內皮拖鞋" alt="室內皮拖鞋"></i>
+                        <p>室內皮拖鞋</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/bpa-free.png" title="迎賓氣泡水" alt="迎賓氣泡水"></i>
+                        <p>迎賓氣泡水</p>
+                    </li>
+                </ul>
+                <div class="roomView">
+                    <a asp-controller="Rooms" asp-action="Singleroom"  asp-route-Id="400">VIEW MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="familyroom2">
+        <div class="mainImg">
+            <img src="~/img/Room/family_room2.jpg" alt="family_room">
+        </div>
+        <div class="roomContent">
+            <div class="roomtxt">
+                <h2>標準四人房</h2>
+                為家庭及團體設計的旅居親子房,<br />
+                明亮採光，寬敞舒適的空間，與家人朋友度過一個美好的假期。
+
+            </div>
+            <div>
+                <ul class="room_icon">
+                    <li>
+                        <i><img src="~/img/use/bed.png" title="加大雙人床" alt="加大雙人床"></i>
+                        <p>加大雙人床</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/tv.png" title="液晶電視" alt="液晶電視"></i>
+                        <p>液晶電視</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/movie.png" title="黑膠唱盤" alt="黑膠唱盤"></i>
+                        <p>黑膠唱盤</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/clean.png" title="浴缸" alt="浴缸"></i>
+                        <p>浴缸</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/slippers.png" title="室內皮拖鞋" alt="室內皮拖鞋"></i>
+                        <p>室內皮拖鞋</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/bpa-free.png" title="迎賓氣泡水" alt="迎賓氣泡水"></i>
+                        <p>迎賓氣泡水</p>
+                    </li>
+                </ul>
+                <div class="roomView">
+                    <a asp-controller="Rooms" asp-action="Singleroom"  asp-route-Id="401">VIEW MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+	<br>
+    <br>
+    <br>
+    <div class="back">
+        <a asp-controller="Rooms" asp-action="Roomsmasterpage">
+            <i class="fas fa-hand-point-left"></i> Back
+        </a>
+    </div>
+</article>

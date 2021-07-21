@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewData["Title"] = "Contact Us";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/contactus.css">
+}
+<style>
+    .error {
+        padding-top: 3PX;
+        color: red;
+    }
+</style>
+<!-- 以下3行 套用jquery-validation 驗證表格用-->
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+
+<section id="ContactUs">
+    <div class="jumbotron">
+        <h1>CONTACT US</h1>
+        <h4>聯絡我們</h4>
+    </div>
+    <div>
+        <p>
+            為遠道而來的賓客提供最好的住宿空間與服務，是我們長久以來努力的目標 !<br />歡迎透過聯絡我們表單告訴我們您的住宿心得，相關問題諮詢也會盡快與您回覆，謝謝
+        </p>
+
+
+        <p style="color:orange">※ 本表單不提供住房預訂服務，如需預訂請至訂房系統</p>
+    </div>
+</section>
+
+<section id="contact">
+    <!-- 聯絡我們 -->
+    <div id="contactus" class="container col-12 col-lg-9">
+
+        <form id="contactForm" method="post" asp-controller="Home" asp-action="Create">
+            <div class="cont">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputName">姓名</label>
+                        <input type="text" class="form-control" name="Name" id="inputName" placeholder="Name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPhone">電話</label>
+                        <input type="tel" class="form-control" name="Phone" id="inputPhone" placeholder="Phone" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputEmail">信箱</label>
+                        <input type="email" class="form-control" name="Address" id="inputEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputMessage">留言</label>
+                        <textarea type="text" class="form-control " name="Contactmessage" id="inputMessage" placeholder="Message" required></textarea>
+                    </div>
+                    @*<div>
+                            <p>
+                                為遠道而來的賓客提供最好的住宿空間與服務，是我們長久以來努力的目標 !<br />歡迎透過聯絡我們表單告訴我們您的住宿心得，相關問題諮詢也會盡快與您回覆，謝謝
+                            </p>
+
+
+                            <p style="color:red">※ 本表單不提供住房預訂服務，如需預訂請至訂房系統</p>
+                        </div>*@
+                    <button type="submit" class="btn btn-light">送出</button>
+
+
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</section>
+<script>
+
+    //表單送出 給予回應
+    $.validator.setDefaults({
+        submitHandler: function () {
+            alert("已經收到您的留言");
+            form.submit();
+        }
+    });
+    $().ready(function () {
+        $("#contactForm").validate({
+
+            messages: {
+                Name: "請輸入您的名字",
+                Address: "請輸入正確的電子郵箱",
+                Phone: "請輸入正確的電話號碼",
+                Contactmessage: "請留言",
+            }
+        });
+    });
+</script>

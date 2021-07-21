@@ -1,0 +1,62 @@
+﻿@model IEnumerable<project.Models.UserLogin>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+
+<h1>員工帳號密碼</h1>
+
+@*<p>
+    <a asp-action="Create">新增員工編號</a>
+</p>*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Authorize)
+            </th>
+            <th>
+                操作
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Account)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Authorize)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WID">編輯</a> |
+                <a asp-action="Details" asp-route-id="@item.WID">詳情</a> |
+                <a asp-action="Delete" asp-route-id="@item.WID">刪除</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<br />
+<br />
+<br />
+<br />
+<br />

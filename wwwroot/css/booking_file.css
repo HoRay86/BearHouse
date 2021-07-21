@@ -1,0 +1,80 @@
+.main {
+	padding-top: 130PX;
+	background-color: rgb(248, 241, 229);
+	height: 130%;
+}
+
+.order_info {
+	margin: 10PX;
+}
+
+.orderroom_img img {
+	width: 100%;
+	float: left;
+	padding-left: 0;
+}
+
+.orderroom {
+	width: 100%;
+	border: solid 1.5PX rgb(190, 189, 189);
+	/*border-radius: 5PX;*/
+	font-size: 15px;
+	padding: 10PX;
+	background-color: rgb(253, 253, 253);
+}
+
+h3 {
+	padding: 10PX;
+	color: white;
+}
+
+
+	.orderlist row {
+		margin: 10PX;
+	}
+
+	#pay img {
+		width: 30PX;
+	}
+
+	.orderbox {
+		width: 100%;
+		border: solid 1.5PX rgb(190, 189, 189);
+		border-radius: 8PX;
+		font-size: 15px;
+		margin-top: 15PX;
+		padding: 12PX;
+		background-color: rgb(253, 253, 253);
+		margin-bottom: 40PX;
+	}
+
+	label, p, span, input {
+		font-size: 17px;
+	}
+
+	h4 {
+		margin: 10PX;
+		padding-bottom: 15PX;
+	}
+
+	.orderbox .forwho {
+		font-size: 25PX;
+		padding-left: 0PX;
+	}
+
+	.orderbox .for {
+		font-size: 25PX;
+		padding-left: 0PX;
+	}
+
+	@media screen and (max-width:893px) {
+		.check_box {
+			overflow: hidden !important;
+			position: fixed !important;
+			z-index: 1 !important;
+			top: calc(100vh - 60px ) !important;
+			width: 100% !important;
+			height: 60PX !important;
+			right: 0;
+		}
+	}

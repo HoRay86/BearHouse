@@ -1,0 +1,47 @@
+﻿@using project.Models.Helpers
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var car = HttpContextAccessor.HttpContext.Session.Get<List<Item>>("Cart");
+    var start = HttpContextAccessor.HttpContext.Session.GetString("start");
+    var end = HttpContextAccessor.HttpContext.Session.GetString("end");
+}
+@*<div class="row">*@
+<!--此欄為訂房購物車欄位  -->
+    <a id="CartDropDown" class="nav-link dropdown-toggle" data-toggle="dropdown">
+        購物車(
+        @{ if (car != null) {<span> @car.Count</span> } else { <span>0 </span>} })
+    <span class="caret"></span>
+</a>
+    <div class="dropdown-menu" role="menu" aria-labelledby="CartDropDown">
+        @if (car != null)
+        {
+            if (car.Count > 0)
+            {
+                <a class="dropdown-item">入住時間:<span>@start</span>~<span>@end</span></a>
+                foreach (var item in car)
+                {
+                    <a class="dropdown-item">@item.RoomName<span>@item.DayPrice 元 x @item.Quantity</span></a>
+                    <a class="dropdown-item" asp-controller="Reserve" asp-action="Deletecar" asp-route-Id="@item.RoomType"><span>刪除</span></a>
+                }
+                <a class="btn btn_booknow" asp-controller="Reserve" asp-action="Check">立即預訂</a>
+            }
+        }
+        else
+        {
+            <a class="dropdown-item" href="#">無任何房間</a>
+        }
+    </div>
+    @*@{var car = HttpContextAccessor.HttpContext.Session.Get<List<Item>>("Cart");
+            if (car != null)
+            {
+                foreach (var item in car)
+                {
+                    <div id="order_total">總價:@(item.DayPrice) </div>
+                    <div id="order_txt">房名: @(item.RoomName)</div>
+                    <div>房型:@(item.RoomSize)人房</div>
+                    <div>房數:@(item.Quantity)</div>}
+
+            }
+        }
+        <div id="btn_booking"><a asp-controller="Reserve" asp-action="check" class="btn btn_booknow ">立即預訂</a></div>*@

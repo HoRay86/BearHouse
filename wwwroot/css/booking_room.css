@@ -1,0 +1,195 @@
+body {
+	height: 100%;
+}
+
+.main {
+	padding: 80PX 0 ;
+	background-color: rgb(248, 241, 229);
+	font-family: "Arial", "fantasy", "微軟正黑體";
+	font-size: 16PX;
+}
+
+#date1 {
+	margin: 45PX auto;
+	text-align: center;
+	border: 2PX gray double;
+	padding: 20PX;
+	background-color: rgb(241, 237, 237);
+	width: auto;
+}
+
+#orderpage .container {
+	position: relative;
+}
+
+.orderroom_img img {
+	width: 100%;
+	float: left;
+	padding-left: 0;
+	height: auto;
+}
+
+.order_info {
+	overflow: hidden;
+	padding: 0PX;
+}
+
+.orderroom {
+	width: 100%;
+	border: solid 1.5PX rgb(190, 189, 189);
+	border-radius: 8PX;
+	font-size: 15px;
+	margin-top: 15PX;
+	padding: 8PX;
+	background-color: rgb(253, 253, 253);
+}
+
+#check_box {
+	/*	max-width: 230PX;*/
+	height: auto;
+	background-color: rgb(253, 253, 253);
+	border: solid 1.5PX rgb(168, 171, 172);
+	border-radius: 8PX;
+	font-size: 15px;
+	position: absolute;
+	text-align: center;
+	top: 0PX;
+	right: 0;
+	padding: 5PX;
+}
+
+@media screen and (max-width:767px) {
+	#check_box {
+		position: fixed;
+		z-index: 1;
+		top: unset;
+		bottom: 0;
+		width: 100%;
+		border: unset;
+		border-radius: unset;
+		border-top: solid 2PX rgb(168, 171, 172);
+		/*		border-radius: 8PX;*/
+		/*		top: calc(100% -30px);*/
+		padding: 5PX;
+		display: unset;
+	}
+
+	.orderAll {
+		width: auto;
+		/*display: inline-flex;*/
+		/*justify-content: center;*/
+		padding-top: 8PX;
+		margin-right: 100PX;
+	}
+
+	.deleteBtn {
+		/*width: 30PX;*/
+		right: 50PX;
+	}
+	/*.useorder {
+		display: inline-flex;*/ /*
+		justify-content: center;
+		align-content: center;*/
+	/*}*/
+}
+
+@media screen and (max-width:480px) {
+	.orderAll {
+		display: inline-flex;
+		padding-top: 8PX;
+		margin-right: 50PX;
+	}
+}
+
+@media screen and (max-width:360px) {
+	.orderAll {
+		display: inline-flex;
+		padding-top: 8PX;
+		margin-right: 20PX;
+	}
+}
+
+
+/*.fixedBar {
+	position: fixed;
+	right: 10%;
+	width: 230PX;
+	height: auto;
+	top: 200PX;
+}
+*/
+.visible-title {
+	visibility: visible;
+}
+
+/*@media screen and (max-width:690px) {
+	.check_box {
+	}
+}*/
+/*top: calc(100vh - 60px );
+		width: 100%;
+		display: inline-block;
+		height: 60PX;
+	}
+
+	.fixedBar {
+		overflow: hidden;
+		position: fixed;
+		z-index: 1;
+		right: 0;*/
+/*bottom: 0;*/
+/*top: calc(100vh - 60px);
+		width: 100%;
+		display: inline-block;
+		height: 60PX;
+	}
+}*/
+.dropdown-item {
+	padding-bottom: 10PX;
+}
+
+.orderAll {
+	float: left;
+	margin-left: 23PX;
+	/*display: inline-block;*/
+}
+
+.deleteBtn {
+	overflow: hidden;
+	padding-top: 8PX;
+	margin-left: 5PX;
+}
+
+.totalPrice {
+	margin-top: 5PX;
+}
+
+#check_box .btn_booknow {
+	background-color: rgb(125, 213, 235);
+	width: auto;
+	color: black;
+	border: 2px solid rgb(125, 213, 235);
+	border-radius: 5px;
+	padding: 3PX;
+	margin: 10PX;
+}
+
+	#check_box .btn_booknow:hover {
+		background-color: rgb(101, 186, 207);
+		border: 2px solid rgb(101, 186, 207);
+	}
+
+.orderroom_lookmore {
+	float: left;
+}
+
+.no-rooms {
+	float: right;
+}
+
+.lookmoretxt {
+	/*	border-top: 1.5PX solid rgb(39 63 95);
+	border-bottom: 1.5PX solid rgb(39 63 95);*/
+	margin: 15PX 0PX 0 40PX;
+	font-size: 15PX;
+}

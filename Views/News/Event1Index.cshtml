@@ -1,0 +1,57 @@
+﻿@model project.Models.News
+@{
+    ViewData["Title"] = "NEWS EVENT";
+    var imagepath = Model.Photo;
+}
+@section css{
+    <link rel="stylesheet" href="~/css/Events.css">
+}
+
+<section id="NewsEvent">
+    <div class="jumbotron">
+        <h1>NEWS</h1>
+        <h4>最新消息</h4>
+    </div>
+</section>
+<section id="News">
+    <div class="event container">
+        <div class="event-name">
+            @Model.Name
+            @*Bear House X 傳鳴*@
+        </div>
+        <div class="event-date">
+            &nbsp;@Model.Date
+        </div>
+        <div class=event-img>
+            <img src="@Url.Content(imagepath)" alt="@Model.Photodescription" />
+        </div>
+        <div class="event-text">
+            <div class="event-txt">
+                <strong>
+                    @Html.Raw(Model.Introduction)
+                    <!--【Bear House X 傳鳴】即日起至6/30，指定方案入住，即享傳鳴肉粽經典套餐-->
+                </strong>
+
+                <p>
+                    @Html.Raw(Model.Text.Replace("\n", "<br>"))
+                    <!--
+                    <br>傳鳴肉粽今年推出端午特色粽禮，
+                    嚴選豪華海陸食材，老師傅以匠心獨運的手藝功夫，
+                    獻上台味十足「寶島北部粽」、鮮味逸品「鮑魚瑤柱花菇粽」、奢華養生「松茸松露蕈菇素粽」
+                    以及人氣熱銷「蔓越莓野米奶皇粽」，單品或組合粽禮皆可選購！<br><br>
+                    現在專案入住，另享傳鳴肉粽桃園旗艦店現場購物9折優惠！伴手禮的心意輕鬆帶著走！
+                    <br><br>
+                    專案內容：附精緻套餐式早餐，依房型每人附傳鳴肉粽經典套餐（市值1,080元~1,320元）<br>
+                    入住日期：2021/04/30-2021/06/30<br>
+                    適用房型：各房型皆適用<br>
+                    -->
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="back">
+        <a asp-controller="News" asp-action="Index">
+            <i class="fas fa-hand-point-left"></i> Back
+        </a>
+    </div>
+</section>	  

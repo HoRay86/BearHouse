@@ -1,0 +1,62 @@
+/*房型介紹+文字*/
+#roomtype{
+    text-align: center;
+    line-height: 2rem;
+    font-family: cwTeXFangSong, serif;
+    padding-top:70px;
+}
+#poem {
+    text-align: center;
+    line-height: 2rem;
+    font-family: cwTeXFangSong, serif;
+}
+#roomtype h1 {
+    font-family: "copperplat";
+    font-size: 50px;
+    margin-bottom: 24px;
+    line-height: 2.9rem;
+    letter-spacing: 3px;
+    color: #8b6f4c;
+}
+
+#roomtype h3 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    color: darksalmon;
+}
+
+.hr01 { /*hr線條:樣式 */
+    border-top: 0PX;
+    border-bottom: 5px #5D4037 solid;
+    width: 75%;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+.hr02 { /*hr線條:樣式 */
+    border-bottom: 2px #795548 solid;
+    width: 70%;
+}
+
+/*卡片*/
+.roompicscard figcaption {
+    text-align: center;
+}
+
+#roompagecard {
+    margin-top: 50px;
+}
+    #roompagecard .roompicscard:hover {
+        /*opacity: 0.6;*/
+        -webkit-filter: contrast(1.3);
+    }
+    #roompagecard a {
+        text-decoration:none;
+    }
+    #roompagecard a:hover{
+        font-weight:bold;
+    }
+#roompagecard a:visited {
+    color: black;
+}

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<project.Models.News>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+
+<h1>
+    最新消息
+</h1>
+
+<a class="NewsCreate" asp-action="Create">新增消息</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Photo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Introduction)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Text)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Photodescription)
+                </th>*@
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td class="NewsDetails">
+                    <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Photo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.Raw(item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Introduction)
+                    </td>
+                    <td>
+                        @Html.Raw(item.Text.Replace("\n", "<br>"))
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Photodescription)
+                    </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">編輯消息</a><br>
+                @*<a asp-action="Details" asp-route-id="@item.Id">詳細消息</a><br>*@
+                <a asp-action="Details" asp-route-id="@item.Id">刪除消息</a><br>
+                @*<a asp-action="Delete" asp-route-id="@item.Id">刪除消息</a>*@
+            </td>
+            </tr>
+        }
+    </tbody>
+</table>

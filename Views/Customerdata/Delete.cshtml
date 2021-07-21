@@ -1,0 +1,91 @@
+﻿@model project.Models.Customer
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+<h1>刪除</h1>
+
+<h3>確定要刪除訂單嗎?</h3>
+<div>
+    <h4>顧客房間資料</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RoomType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RoomType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RoomName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RoomName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RoomNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerPhone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CustomerPhone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerEmail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CustomerEmail)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ArrivalDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArrivalDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimatedArrvialTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimatedArrvialTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DepartureDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DepartureDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nights)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nights)
+        </dd>
+    </dl>
+
+    <form asp-action="Deleteroom">
+        <input type="hidden" asp-for="ID" name="id" />
+        <input type="hidden" asp-for="RoomNumber" name="roomnumber" />
+        <input type="submit" value="刪除此房間資料" class="btn btn-danger" /> |
+        <a asp-action="Index">回上一頁</a>
+    </form>
+</div>

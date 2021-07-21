@@ -1,0 +1,92 @@
+﻿#NewsEvent {
+    text-align: center;
+    line-height: 2rem;
+    font-family: cwTeXFangSong, serif;
+    padding-top: 70px;
+}
+
+    #NewsEvent h1 {
+        font-family: "copperplat";
+        font-size: 50px;
+        margin-bottom: 24px;
+        line-height: 2.9rem;
+        letter-spacing: 3px;
+        color: #8b6f4c;
+    }
+
+    #NewsEvent h4 {
+        font-weight: bold;
+        letter-spacing: 0.16em;
+        color: darksalmon;
+    }
+
+.event {
+    margin: 0 auto;
+    height: 100%;
+    text-align: center;
+}
+
+#News {
+    text-align: center;
+}
+
+.event-name {
+    line-height: 1.5rem;
+    height: 39PX;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.event-date {
+    font-size: 13PX;
+    color: #FFFF37;
+    background-color: #003060;
+    height: 18PX;
+    margin: 20px auto;
+    max-width: 580px;
+    text-align: center;
+}
+
+.event img {
+    max-height: 26rem;
+    max-width: 26rem;
+    margin: 20PX auto;
+}
+
+@media screen and (max-width: 500px) {
+    .event img {
+        max-height: 26rem;
+        max-width: 275px;
+        margin: 20PX auto;
+    }
+
+    .event-date {
+        margin: 10px auto;
+        max-width: 380px;
+    }
+}
+
+.event-txt {
+    max-width: 31rem;
+    margin: 20PX auto;
+    line-height: 2.3;
+    font-size: 16PX;
+    padding: 10PX 0;
+    text-align: left;
+}
+#News .back a {
+    text-decoration: none;
+    color: lightgray;
+    font-size: 14PX;
+}
+
+#News .back {
+    margin: 10PX auto;
+    text-align: center;
+}
+
+#News .back a:hover {
+    color: lightgray;
+    text-decoration: none;
+    font-size: 16PX;
+}

@@ -1,0 +1,112 @@
+﻿@model project.Models.Introduction
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+<h4>確定刪除嗎?</h4>
+<div>
+    <h5>房間介紹</h5>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Photo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Photo1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Photo2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RoomSize)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RoomSize)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Singlebed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.Singlebed)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Doublebed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.Doublebed)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TV)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.TV)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Airconditioning)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.Airconditioning)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bathtub)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.Bathtub)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tellphone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.Tellphone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Refrigerator)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.Refrigerator)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ShowerRoom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.ShowerRoom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RoomContent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RoomContent)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RoomTxt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RoomTxt)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="RoomType" />
+        <input type="submit" value="刪除" class="btn btn-danger" /> |
+        <a asp-action="Index">回上一頁</a>
+    </form>
+</div>

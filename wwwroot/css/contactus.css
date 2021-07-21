@@ -1,0 +1,74 @@
+﻿#ContactUs {
+    text-align: center;
+    line-height: 2rem;
+    font-family: cwTeXFangSong, serif;
+    padding-top: 70px;
+}
+#ContactUs p{
+    font-size:16px;
+}
+    #ContactUs h1 {
+        font-family: "copperplat";
+        font-size: 50px;
+        margin-bottom: 24px;
+        line-height: 2.9rem;
+        letter-spacing: 3px;
+        color: #8b6f4c;
+    }
+
+    #ContactUs h4 {
+        font-weight: bold;
+        letter-spacing: 0.16em;
+        color: darksalmon;
+    }
+
+    #contactus form {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+#contact {
+    padding: 40PX;
+}
+
+#contactTitle {
+    text-align: center;
+}
+
+#contact h1 {
+    font-family: "copperplat";
+    font-size: 2.9rem;
+    margin-bottom: 20px;
+    line-height: 2.5rem;
+    letter-spacing: 3px;
+    color: #8b6f4c;
+}
+
+#contact h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    color: darksalmon;
+    padding-bottom: 15PX;
+}
+
+#contactus {
+    border: solid 5PX;
+    margin-top: 0PX;
+    margin-bottom: 0PX;
+    padding: 5PX;
+    background-color: #e9ecef;
+}
+
+    #contactus .cont {
+        border: solid 2PX;
+        padding: 35PX;
+    }
+
+    #contactus .btn {
+        margin: auto;
+    }
+
+     p {
+        font-size: 10PX;
+    }

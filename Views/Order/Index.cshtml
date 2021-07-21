@@ -1,0 +1,73 @@
+﻿@model IEnumerable<project.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+<h1>
+    訂單狀況
+</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseAmount)
+            </th>
+
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PurchaseAmount)
+                </td>
+
+                <td>
+                    <a asp-controller="Customerdata" asp-action="Create" asp-route-id="@item.ID">顧客加訂房間</a> |
+                    <a asp-action="Edit" asp-route-id="@item.ID">編輯</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">詳細</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">刪除</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<br />

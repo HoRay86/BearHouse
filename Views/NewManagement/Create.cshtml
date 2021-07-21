@@ -1,0 +1,82 @@
+﻿@model project.Models.News
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+<h1>新增消息</h1>
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <form asp-action="CreateNew">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" required />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Photo" class="control-label"></label>
+                <input type="file" id="file" asp-for="Photo" class="form-control" style="border:none;" />
+                <div><img id="NewsCreateImgDemo" /></div>
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photodescription" class="control-label"></label>
+                <input asp-for="Photodescription" class="form-control" />
+                <span asp-validation-for="Photodescription" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input type="date" asp-for="Date" class="form-control" required />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <textarea asp-for="Title" class="message" name="Title" rows="3"></textarea>
+                @*<input asp-for="Title" class="form-control" />*@
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Introduction" class="control-label"></label>
+                <textarea asp-for="Introduction" class="message" name="Introduction" rows="3"></textarea>
+
+                @*<input asp-for="Introduction" class="form-control" />*@
+                <span asp-validation-for="Introduction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <textarea asp-for="Text" class="message" name="Text" rows="7"></textarea>
+                @*<input asp-for="Text" class="form-control" />*@
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="新增" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">返回</a>
+</div>
+
+
+<script>
+
+    $('#file').change(function () {
+        var file = $('#file')[0].files[0];
+        var reader = new FileReader;
+        reader.onload = function (e) {
+            $('#NewsCreateImgDemo').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(file);
+    });
+</script>

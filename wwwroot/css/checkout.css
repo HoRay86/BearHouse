@@ -1,0 +1,35 @@
+﻿body {
+    margin: 15PX 50PX;
+}
+.container{
+    padding-top:120PX;
+}
+.orderInfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rgb(255, 241, 221);
+}
+
+.roomcheck, .orderId, .orderTime, .customer {
+    height: auto;
+    width: 420PX;
+    padding: 20PX;
+}
+.roomsOrder{
+    padding-top:10PX;
+}
+.roomcheck img {
+    width: 130PX;
+    float: left;
+}
+
+.check {
+    overflow: hidden;
+    padding-left: 15PX;
+}
+
+.Btn {
+    margin: 20PX 0;
+    text-align: center;
+}

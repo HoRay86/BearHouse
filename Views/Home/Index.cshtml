@@ -1,0 +1,269 @@
+﻿@model IEnumerable<project.Models.News>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@section css
+    {
+    <link rel="stylesheet" href="~/css/index.css">
+}
+<!-- 以下3行 套用jquery-validation 驗證表格用-->
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+<style>
+    .error {
+        padding-top: 3PX;
+        color: red;
+    }
+</style>
+
+<section id="section1">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel data-interval=" false"">
+        <!-- 連結導引項目 -->
+        <ul class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ul>
+        <!--圖片顯示區, 幻燈片圖片 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/img/11.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/22.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/33.jpg" />
+            </div>
+        </div>
+        <!-- 前後切換連結-->
+        <a class="carousel-control-prev" href="#myCarousel"
+           data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel"
+           data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</section>
+
+<section id="section2" class="bg-light">
+    <div class="container">
+        <!--<div class="row">-->
+        <div class="col-md-12  text-center">
+            <h1><strong>NEWS</strong></h1>
+            <h4>最新消息</h4>
+        </div>
+        <div class="container">
+            <ul class="events">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <a asp-controller="News" asp-action="Event1Index" asp-route-Id="@item.Id">
+                            <div class="event">
+
+                                <img src="@Url.Content(item.Photo)" alt="@item.Photodescription" />
+
+                                <div class="event-date">
+                                    &nbsp;@item.Date
+                                </div>
+                                <div class="event-name">
+                                    @item.Name
+                                </div>
+                                <div class="event-text">
+                                    <div class="event-txt">
+                                        @Html.Raw(item.Title.Replace("\n", "<br>"))
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                }
+
+            </ul>
+
+        </div>
+
+        <div class="viewBtn">
+            <a asp-controller="News" asp-action="Index" class="btn viewmoreBtn">View More</a>
+
+        </div>
+        <!--<button type="button" class="btn btn-outline-warning">Warning</button>
+        <input type="button" value="我是按鈕" style="width:120px;height:40px;border:3px orange double;text-align:center;">-->
+    </div>
+</section>
+
+<!--關於之欄位-->
+<section id="section3" class="aboutMe" style="background-image: url('img/5.jpg')">
+    <!--以圖片作為背景-->
+    <h1><strong>ABOUT BEAR</strong></h1>
+    <h4>關於我們</h4>
+    <!-- mobile-->
+    <div class="aboutBox">
+        <div class="poster">
+            「旅行的目的不是一個地理名詞，而是看待事物的全新角度。」
+        </div>
+        <div class="aboutBg">
+            <h2>旅行是對庸常生活的一次越獄。</h2>
+            <div class="aboutTxt">
+                Bear House
+                <br>
+                希望每一位來訪的好友，
+                都能找到最適合自己的旅行方式，<br>
+                輕裝簡從或秘密居遊都能滿足！<br>
+                <br>
+                共享一間不打烊的「粅粅書BBBooks」書店、<br>
+                交換文化想法的你好沙龍、切磋廚藝的共享廚房、發呆沐浴在南國陽光的恣意露臺...
+            </div>
+            <div class="viewMore">
+                <a class="viewMoreicon" asp-controller="About" asp-action="Index">
+                    <img src="~/img/icon/travel-case.png"> <br>  &gt; View more &lt;
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="rooms">
+    <div class="jumbotron">
+        <h1><strong>ROOMS</strong></h1>
+        <h4>房型介紹</h4>
+    </div>
+    <div class="HotelRoom">
+        <h2>旅館客房  HOTEL</h2>
+        <div class="HRtxt">
+            <p>
+                在夢境與生活之間，<br>
+                我們旅行，我們閱讀。<br>
+                <br>
+                We read in bed because reading is halfway between life and dreaming.
+            </p>
+        </div>
+        <div class="roomImg">
+            <img src="~/img/Room/double_room2.jpg" class="img-fluid">
+        </div>
+        <div class="viewMore">
+            <a class="viewMoreicon" asp-controller="Rooms" asp-action="Roomsmasterpage">
+                <img src="~/img/icon/beds.png"> <br>  &gt; View more &lt;
+            </a>
+        </div>
+    </div>
+</section>
+
+<!--background-image: url('img/Room/ROOM2.jpg');*/ /*在url裡放背景的圖片路徑或網址-->
+<section id="Facility1" style="  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('img/bg.jfif');">
+    <div id="Facility">
+        <div class="fac">
+            <h1><strong>FACILITY</strong></h1>
+            <h4>服務設施</h4>
+        </div>
+    </div>
+
+    <div class="facilityBox">
+        <!-- pc版 -->
+        <div class="facTxt">
+            我們精心打造了各個場域，卻不企圖改變你，<br>
+            只希望踏進Bear House的那一刻起，就是盡情探索的開始！<br>
+            粅粅書BBBooks ｜ 你好沙龍 Hello Salon ｜ 恣意露臺 Free Terrace  <br>
+            共享廚房  Open Kitchen  ｜ 共聚書房 Gather Studio
+        </div>
+        @*<div class="viewBtn2">
+                <a href="#">
+                    <span>View MORE</span>
+                </a>
+            </div>*@
+    </div>
+
+</section>
+
+<section id="map">
+    <div class="container">
+        <div class="row">
+            <div class="mapImg col-md-7">
+                <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.45999835459!2d121.34016311414415!3d24.984480783995547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681e8f88001f51%3A0xde8e62ebe5442d75!2z6YqY5YKz5aSn5a24Leahg-Wckum-nOWxseagoeWNgA!5e0!3m2!1szh-TW!2stw!4v1621498839366!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="mapTxt col-md-4 offset-1">
+                <p>
+                    <strong>BEAR HOUSE</strong>  <br />
+                    333桃園市龜山區德明路5號
+                </p>
+                <p>
+                    <i class="fas fa-phone-square-alt"></i> &emsp;+886233302003 <br />
+                    <i class="fas fa-envelope"></i>&emsp;bearhouse@gmail.com <br />
+
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div id="contactTitle">
+        <h1><strong>CONTACT US</strong></h1>
+        <h4>聯絡我們</h4>
+    </div>
+
+    <!-- 聯絡我們 -->
+    <div id="contactus" class="container col-12 col-lg-9">
+
+        <form id="contactForm" method="post" asp-controller="Home" asp-action="Create">
+            <div class="cont">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputName">姓名</label>
+                        <input type="text" class="form-control" name="Name" id="inputName" placeholder="Name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPhone">電話</label>
+                        <input type="tel" class="form-control" name="Phone" id="inputPhone" placeholder="Phone" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputEmail">信箱</label>
+                        <input type="email" class="form-control" name="Address" id="inputEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputMessage">留言</label>
+                        <textarea type="text" class="form-control " name="Contactmessage" id="inputMessage" placeholder="Message" required></textarea>
+                    </div>
+                    <div>
+                        <p>
+                            為遠道而來的賓客提供最好的住宿空間與服務，是我們長久以來努力的目標 !<br />歡迎透過聯絡我們表單告訴我們您的住宿心得，相關問題諮詢也會盡快與您回覆，謝謝
+                        </p>
+
+
+                        <p style="color:red">※ 本表單不提供住房預訂服務，如需預訂請至訂房系統</p>
+                    </div>
+                    <button type="submit" class="btn btn-light">送出</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</section>
+<script>
+
+    //表單送出 給予回應
+    $.validator.setDefaults({
+        submitHandler: function () {
+            alert("已經收到您的留言");
+            form.submit();
+        }
+    });
+    $().ready(function () {
+        $("#contactForm").validate({
+
+            messages: {
+                Name: "請輸入您的名字",
+                Address: "請輸入正確的電子郵箱",
+                Phone: "請輸入正確的電話號碼",
+                Contactmessage: "請留言",
+            }
+        });
+    });
+</script>

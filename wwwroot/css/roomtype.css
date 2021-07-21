@@ -1,0 +1,114 @@
+
+.hr01 { /*hr線條:樣式 */
+    border-top: 0PX;
+    border-bottom: 5px #5D4037 solid;
+    width: 75%;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+.hr02 { /*hr線條:樣式 */
+    border-bottom: 2px #795548 solid;
+    width: 70%;
+}
+
+.container {
+    margin-bottom: 15PX;
+    margin-top:20px;
+}
+
+#roomtype {
+    text-align: center;
+    padding-top:83px;
+    margin-bottom: 30px;
+    letter-spacing: 1.5PX; /*字元間距*/
+    line-height: 2.5; /*設定行高*/
+    font-size: 17px;
+    margin-top: 30PX;
+    padding-bottom: 30PX;
+    border-bottom: 1PX solid brown;
+}
+#roomtype .room_name {
+    padding: 20px 0;
+}
+
+#room_img {
+    text-align: center;
+    margin-top: 50PX;
+}
+
+#room_img .carousel-inner img {
+        max-width: 100%;
+}
+
+.roomDetails {
+    max-width: 600PX;
+    margin: 40PX auto 30PX;
+    padding-bottom: 25PX;
+    border-bottom: 1PX solid brown;
+}
+
+.rdtitle {
+    font-size: 1.875rem;
+    letter-spacing: 0.095em;
+    margin-left: 20px;
+}
+
+.RDtitle {
+    display: inline-block;
+}
+.textbox {
+    padding-left: 20px;
+    padding-bottom:20px;
+}
+.roomDetails ul {
+    padding: 20PX 0;
+}
+
+.roomDetails ul li {
+        padding: 18PX 20PX 0;
+        list-style-type: none;
+        display: inline-block;
+        margin: 0 10PX 20PX;
+        font-size: 17PX;
+        color: dark;
+}
+
+.order {
+    color: gray;
+    font-size: 13PX;
+    margin: 0 20px;
+}
+
+input {
+    padding: 5PX 10PX;
+    background-color: lightblue;
+}
+input:hover {
+        background-color:antiquewhite;
+        font-weight:bold;
+    }
+
+.roomDetails .btn {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.goback {
+    text-align: center;
+    margin: 10PX auto;
+}
+
+.goback a {
+        color: lightgray;
+        text-decoration: none;
+        font-size: 14PX;
+}
+
+.goback a:hover {
+            color: lightgray;
+            text-decoration: none;
+            font-size: 16PX;
+}
+

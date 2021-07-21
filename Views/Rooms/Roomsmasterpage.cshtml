@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "ROOMSMASTERPAGE";
+}
+
+
+@section css{
+    <link rel="stylesheet" href="~/css/roomstyle_masterpage.css">
+}
+<section id="roomtype">
+    <div class="jumbotron">
+        <h1>ROOMS</h1>
+        <h3>房型介紹</h3>
+    </div>
+</section>
+
+<section id="poem">
+    <div class="poemsup">
+        <h1>旅館客房 HOTEL</h1>
+    </div>
+    <hr class="hr01">
+    <hr class="hr02">
+    <div class="poemsdown">
+        在旅行中遇到的每一個人，每一件事與每一個美麗景色，<br>
+        都有可能成為一生中難忘的風景。<br>
+        <br>
+        一路走來，<br>
+        我們無法猜測迎接的會試什麼樣的風景，沒法預測目的地在哪，<br>
+        可是前進的腳步卻始終不能停下，<br>
+        因為時間不允許我們在任何地方停留，<br>
+        只有在前進中不斷學會選擇，學會體會，學會欣賞。<br>
+
+    </div>
+</section>
+<section id="roompagecard">
+    <div class="room_card container">
+        <div class="row room-cards-wrapper">
+            <div class="roompicscard mb-5 col-sm-6 col-lg-6 col-12">	
+                <figure class="card">
+                    <img alt="單人房" src="~/img/Room/single_room2.jpg">
+                    <figcaption class="card-footer">
+                        <a class="stretched-link" asp-controller="Rooms" asp-action="Singleindex">單人房</a>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="roompicscard mb-5 col-sm-6 col-lg-6 col-12">	
+                <figure class="card">
+                    <img alt="雙人房" src="~/img/Room/double_room2.jpg">
+                    <figcaption class="card-footer">
+                        <a class="stretched-link" asp-controller="Rooms" asp-action="Roomselectindex">雙人房</a>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="roompicscard mb-5 col-sm-6 col-lg-6 col-12">	
+                <figure class="card">
+                    <img alt="三人房" src="~/img/Room/triple_room2.jpg">
+                    <figcaption class="card-footer">
+                        <a class="stretched-link" asp-controller="Rooms" asp-action="Tripleindex">三人房</a>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="roompicscard mb-5 col-sm-6 col-lg-6 col-12">	
+                <figure class="card">
+                    <img alt="四人房" src="~/img/Room/family_room2.jpg">
+                    <figcaption class="card-footer">
+                        <a class="stretched-link" asp-controller="Rooms" asp-action="Quadruplerindex">四人房</a>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,133 @@
+﻿#NewsEvent {
+    text-align: center;
+    line-height: 2rem;
+    font-family: cwTeXFangSong, serif;
+    padding-top: 70px;
+}
+
+
+    #NewsEvent h1 {
+        font-family: "copperplat";
+        font-size: 50px;
+        margin-bottom: 24px;
+        line-height: 2.9rem;
+        letter-spacing: 3px;
+        color: #8b6f4c;
+    }
+
+    #NewsEvent h4 {
+        font-weight: bold;
+        letter-spacing: 0.16em;
+        color: darksalmon;
+    }
+
+    #NewsEvent .events a {
+        text-decoration: none;
+        color: black;
+    }
+
+        #NewsEvent .events a:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+    #NewsEvent .events {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+        font-size: 110%;
+    }
+
+/*@media screen and (max-width: 1679px) and (min-width: 1248px) {
+    #NewsEvent .events {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        margin: 0 auto;
+    }
+}*/
+
+@media screen and (max-width: 1248px) {
+    #NewsEvent .events {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #NewsEvent .events {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+}
+
+#NewsEvent .events li {
+    margin: 0rem;
+    margin-bottom: 10PX;
+    height: 520PX;
+}
+
+#NewsEvent .event {
+    grid-template-rows: 60% 6% 14% 24%;
+    margin: 0 auto;
+    display: grid;
+    height: 100%;
+    text-align: center;
+    max-width: 330px;
+}
+
+@media screen and (max-width: 900px) {
+    #NewsEvent .event {
+        margin: 0 auto;
+        display: grid;
+        height: 100%;
+        text-align: center;
+        max-width: 30rem;
+    }
+}
+
+
+#NewsEvent .event-date {
+    font-size: 1rem;
+    line-height: normal;
+    color: #FFFF37;
+    background-color: #003060;
+    height: 18PX;
+}
+
+#NewsEvent .event img {
+    max-height: 26rem;
+    max-width: 275px;
+    margin: 1rem auto ;
+}
+/*滑鼠滑過時圖片放大1.1倍*/
+#NewsEvent .event img:hover {
+    transform: scale(1.1);
+}
+    #NewsEvent .event-name {
+        line-height: 2rem;
+        height: 39PX;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+#NewsEvent .event-text {
+    height: 105PX;
+    line-height: 100PX;
+    border-top: 0.3rem #003D79 double;
+    border-bottom: 0.3rem #003D79 double;
+}
+
+#NewsEvent .event-txt {
+    display: inline-block;
+    line-height: 1.6;
+    font-size: 1rem;
+    padding: 10PX 0;
+    text-align:center;
+}

@@ -1,0 +1,76 @@
+﻿@model project.Models.News
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+@*<style>
+    #EditforTitle, #EditforIntroduction {
+        height: 100PX;
+        word-break: break-all;
+    }
+    #EditforText {
+        height: 200PX;
+        word-break: break-all;
+    }
+</style>*@
+<h1>更新最新消息</h1>
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <form asp-action="Editnew">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo" class="control-label"></label>
+                <input asp-for="Photo" class="form-control" />
+                <input type="file" id="file" asp-for="Photo" name="Photo" class="form-control" style="border:none;" />
+
+                <div><img id="NewsCreateImgDemo" /></div>
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photodescription" class="control-label"></label>
+                <input asp-for="Photodescription" class="form-control" />
+                <span asp-validation-for="Photodescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />@ViewBag.errMsg
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  asp-for="Title" class="control-label"></label>
+                <input id="EditforTitle" asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Introduction" class="control-label"></label>
+                <input id="EditforIntroduction" asp-for="Introduction" class="form-control" />
+                <span asp-validation-for="Introduction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <input id="EditforText" asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="儲存" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">返回</a>
+</div>
+<br />

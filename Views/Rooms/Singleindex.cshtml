@@ -1,0 +1,116 @@
+﻿@{
+    ViewData["Title"] = "ROOMS";
+}
+
+
+@section css{
+    <link rel="stylesheet" href="~/css/roomstyle_select.css">
+}
+<section id="poem">
+    <div class="poemsup">
+        <h1>單人套房</h1>
+    </div>
+    <hr class="hr01">
+    <hr class="hr02">
+    <div class="poemsdown">
+        獨享黑膠唱盤與精選唱片，<br>
+        讓音樂流淌在舒適寬敞的空間，<br>
+        讓一日的疲累在浴池中散去，享受低調奢華的慢旅行。
+    </div>
+</section>
+<article id="allroom">
+    <section id="singleroom">
+
+        <div class="mainImg">
+            <img src="~/img/Room/single_room1.jpg" alt="single_room">
+        </div>
+
+        <div class="roomContent">
+            <h2>溫馨單人房</h2>
+            倚在窗邊，欣賞著台灣味的巷弄街景。<br />
+            特別適合想要個人空間與私密性的單人旅行。
+            <div>
+                <ul class="room_icon ">
+                    <li>
+                        <i><img src="~/img/use/safe.png" title="保險箱" alt="保險箱"></i>
+                        <p>保險箱</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/tv.png" title="液晶電視" alt="液晶電視"></i>
+                        <p>液晶電視</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/movie.png" title="黑膠唱盤" alt="黑膠唱盤"></i>
+                        <p>黑膠唱盤</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/shower.png" title="淋浴間" alt="淋浴間"></i>
+                        <p>淋浴間</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/slippers.png" title="室內皮拖鞋" alt="室內皮拖鞋"></i>
+                        <p>室內皮拖鞋</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/freezer.png" title="迎賓氣泡水" alt="迎賓氣泡水"></i>
+                        <p>迎賓氣泡水</p>
+                    </li>
+                </ul>
+                <div class="roomView">
+                    <a asp-controller="Rooms" asp-action="Singleroom"  asp-route-Id="100">VIEW MORE</a> <!--asp-route-Type  Type為控制器裡的的名稱後面為要帶入的數值-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="singleroom2">
+
+        <div class="mainImg">
+            <img src="~/img/Room/single_room2.jpg" alt="single_room">
+        </div>
+
+        <div class="roomContent">
+            <h2>高級單人房</h2>
+            近乎奢侈的空間與小沙發區，是您最佳住宿選擇，<br />
+            喜歡大空間的您，千萬別錯過了。
+            <div>
+                <ul class="room_icon ">
+                    <li>
+                        <i><img src="~/img/use/safe.png" title="保險箱" alt="保險箱"></i>
+                        <p>保險箱</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/tv.png" title="液晶電視" alt="液晶電視"></i>
+                        <p>液晶電視</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/movie.png" title="黑膠唱盤" alt="黑膠唱盤"></i>
+                        <p>黑膠唱盤</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/clean.png" title="浴缸" alt="浴缸"></i>
+                        <p>浴缸</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/slippers.png" title="室內皮拖鞋" alt="室內皮拖鞋"></i>
+                        <p>室內皮拖鞋</p>
+                    </li>
+                    <li>
+                        <i><img src="~/img/use/freezer.png" title="迎賓氣泡水" alt="迎賓氣泡水"></i>
+                        <p>迎賓氣泡水</p>
+                    </li>
+                </ul>
+                <div class="roomView">
+                    <a asp-controller="Rooms" asp-action="Singleroom" asp-route-Id="101">VIEW MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+	<br>
+    <br>
+    <br>
+    <div class="back">
+        <a asp-controller="Rooms" asp-action="Roomsmasterpage">
+            <i class="fas fa-hand-point-left"></i> Back
+        </a>
+    </div>
+</article>

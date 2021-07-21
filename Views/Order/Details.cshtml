@@ -1,0 +1,155 @@
+﻿@model project.Models.Order
+@using project.Models.Helpers
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_user1.cshtml";
+    var orderroom = HttpContextAccessor.HttpContext.Session.Get<List<Order>>("orderroom");
+}
+@section css{
+    <link rel="stylesheet" href="~/css/userMain.css">
+}
+<h4>訂單詳細資料</h4>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.PurchaseAmount)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.PurchaseAmount)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.CreditName)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.CreditName)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.CardNumber)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.CardNumber)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Cvv)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Cvv)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Expirydate)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Expirydate)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Requests)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Requests)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.CustomerPhone)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.CustomerPhone)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.CustomerEmail)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.CustomerEmail)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.EstimatedArrvialTime)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.EstimatedArrvialTime)
+        </dd>
+        @foreach (var item in orderroom)
+        {
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.RoomName)
+            </dt>
+            <dd class="col-sm-4">
+                @(item.RoomName)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.RoomNumber)
+            </dt>
+            <dd class="col-sm-4">
+                @(item.RoomNumber)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.ArrivalDate)
+            </dt>
+            <dd class="col-sm-4">
+                @(item.ArrivalDate)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.DepartureDate)
+            </dt>
+            <dd class="col-sm-4">
+                @(item.DepartureDate)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Nights)
+            </dt>
+            <dd class="col-sm-4">
+                @(item.Nights)
+            </dd>
+        }
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">編輯</a> |
+    <a asp-action="Index">返回</a>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" name="id" />
+        <input type="submit" value="刪除此房間資料" class="btn btn-danger" /> |
+    </form>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
